@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Produto | RustiCerrado</title>
+  <meta name="description" content="Produto artesanal em madeira e resina.">
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/RustiCerrado.oficial.png" type="image/x-icon">
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-flex">
+      <div class="logo">
+        <strong>RustiCerrado</strong>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="vitrine.html">Vitrine</a>
+        <a href="loja.html" class="active">Loja</a>
+        <a href="carrinho.html" class="btn btn-light">Carrinho</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PRODUTO DETALHE -->
+  <section class="section">
+    <div class="container">
+      <div id="produto-detalhe" class="produto-detalhe">
+        <!-- Conteúdo gerado pelo JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 RustiCerrado · Madeira & Resina Artesanal
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="js/produtos.js"></script>
+  <script src="js/carrinho.js"></script>
+
+  <script>
+    // 1️⃣ Pega o ID da URL (?id=1)
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    // 2️⃣ Procura o produto no array
+    const produto = produtos.find(p => p.id == id);
+
+    // 3️⃣ Se não encontrar produto
+    if (!produto) {
+      document.getElementById("produto-detalhe").innerHTML =
+        "<p>Produto não encontrado.</p>";
+    } else {
+
+      // 4️⃣ Mostra o produto na tela
+      document.getElementById("produto-detalhe").innerHTML = `
+      <div class="produto-box">
+        <img src="${produto.imagem}" alt="${produto.nome}" class="produto-img">
+
+        <div class="produto-info">
+          <h1>${produto.nome}</h1>
+          <p>${produto.descricao}</p>
+          <p class="produto-preco">${produto.preco}</p>
+
+          <button onclick="adicionarAoCarrinho(${produto.id})" class="btn">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </div>
+    `;
+    }
+  </script>
+
+</body>
+
+</html>

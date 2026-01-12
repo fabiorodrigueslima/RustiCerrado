@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Carrinho | RustiCerrado</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="img/RustiCerrado.oficial.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container header-flex">
+      <div class="logo">
+        <strong>RustiCerrado</strong>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="vitrine.html">Vitrine</a>
+        <a href="loja.html" class="active">Loja</a>
+        <a href="carrinho.html" class="xart-icon" aria-label="Carrinho"><i class="fas fa-shopping-cart"></i>
+          Carrinho</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CARRINHO -->
+  <section class="section">
+    <div class="container">
+      <h2>Meu Carrinho</h2>
+
+      <div id="lista-carrinho"></div>
+
+      <div class="carrinho-acoes">
+        <button onclick="finalizarPedido()" class="btn">
+          Finalizar pelo WhatsApp
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © 2026 RustiCerrado · Madeira & Resina Artesanal
+  </footer>
+
+  <script src="js/produtos.js"></script>
+  <script src="js/carrinho.js"></script>
+
+  <script>
+    const lista = document.getElementById("lista-carrinho");
+
+    if (carrinho.length === 0) {
+      lista.innerHTML = "<p>Seu carrinho está vazio.</p>";
+    } else {
+      carrinho.forEach((item, index) => {
+        lista.innerHTML += `
+        <div class="card product-card">
+          <h3>${item.nome}</h3>
+          <button onclick="removerDoCarrinho(${index})" class="btn btn-light">
+            Remover
+          </button>
+        </div>
+      `;
+      });
+    }
+  </script>
+
+</body>
+
+</html>
