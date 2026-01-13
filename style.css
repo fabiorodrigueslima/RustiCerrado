@@ -1,488 +1,407 @@
 /* =========================
    RESET
 ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
 /* =========================
-   PALETA OFICIAL – RUSTICERRADO
+   PALETA – RUSTICERRADO
 ========================= */
-:root {
-  /* Fundos */
-  --bg-main: #F5F2EF;
-  --bg-light: #FFFFFF;
-  --bg-dark: #1B1B1B;
+:root{
+  --bg-main:#F5F2EF;
+  --bg-light:#FFFFFF;
+  --bg-dark:#1B1B1B;
 
-  /* Madeira */
-  --wood-main: #3A2F2A;
-  --wood-dark: #2A201C;
-  --wood-light: #6B4F3A;
+  --wood-main:#3A2F2A;
+  --wood-dark:#2A201C;
+  --wood-light:#6B4F3A;
 
-  /* Resina */
-  --resin-main: #2F6F73;
-  --resin-light: #8FC6C9;
-  --resin-dark: #1F4E52;
+  --resin-main:#2F6F73;
+  --resin-dark:#1F4E52;
 
-  /* Texto */
-  --text-main: #2A2A2A;
-  --text-light: #555555;
-  --text-invert: #FFFFFF;
+  --text-main:#2A2A2A;
+  --text-light:#555555;
+  --text-invert:#FFFFFF;
 }
 
 /* =========================
    BASE
 ========================= */
-body {
+body{
   font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--bg-main);
+  background: var(--bg-main);
   color: var(--text-main);
   line-height: 1.6;
+
+  /* IMPORTANTE: header fixo */
+  padding-top: 80px;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+img{
+  max-width:100%;
+  display:block;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+a{
+  text-decoration:none;
+  color:inherit;
 }
 
 /* =========================
    CONTAINER
 ========================= */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 20px;
 }
 
 /* =========================
-   HEADER / MENU
+   HEADER
 ========================= */
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: var(--bg-light);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-  z-index: 1000;
+.header{
+  position:fixed;
+  top:0;
+  width:100%;
+  height:80px;
+  background:var(--bg-light);
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  z-index:1000;
 }
 
-.header-flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
+.header-flex{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:100%;
 }
 
-.logo {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: var(--wood-main);
-}
-
-.nav a {
-  margin-left: 25px;
-  font-weight: bold;
-  color: var(--wood-main);
-}
-
-.nav a:hover {
-  color: var(--resin-main);
+.logo{
+  font-size:1.2rem;
+  font-weight:bold;
+  color:var(--wood-main);
 }
 
 /* =========================
-   HERO – FUNDO + LOGO + TEXTO
+   NAV DESKTOP
 ========================= */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  background-image: url("img/Resina.png");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
+.nav{
+  display:flex;
+  align-items:center;
+  gap:20px;
 }
 
-/* Overlay escuro */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
+.nav a{
+  font-weight:bold;
+  color:var(--wood-main);
 }
 
-/* Container interno */
-.hero-container {
-  position: relative;
-  z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 40px;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
+.nav a:hover{
+  color:var(--resin-main);
 }
 
-/* Logo */
-.hero-left {
-  display: flex;
-  justify-content: center;
+/* ÍCONES */
+.whatsapp-icon,
+.cart-icon{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-size:20px;
+  transition:.3s;
 }
 
-.hero-logo {
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  background: var(--bg-light);
-  padding: 18px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+.whatsapp-icon{
+  background:#25D366;
 }
 
-/* Texto */
-.hero-right {
-  color: var(--text-invert);
+.whatsapp-icon:hover{
+  background:#1ebe5d;
+  transform:scale(1.1);
 }
 
-.hero-right h1 {
-  font-size: 4rem;
-  margin-bottom: 10px;
+.cart-icon{
+  background:var(--resin-main);
 }
 
-.hero-right p {
-  font-size: 1.6rem;
-  margin-bottom: 30px;
-  color: #E6E6E6;
+.cart-icon:hover{
+  background:var(--resin-dark);
+  transform:scale(1.1);
+}
+
+/* =========================
+   BOTÃO MENU MOBILE (3 PONTOS)
+========================= */
+.menu-mobile{
+  display:none;
+  flex-direction:column;
+  gap:6px;
+  background:none;
+  border:none;
+  cursor:pointer;
+}
+
+.menu-mobile span{
+  width:6px;
+  height:6px;
+  background:var(--wood-main);
+  border-radius:50%;
+}
+
+/* =========================
+   HERO
+========================= */
+.hero{
+  position:relative;
+  min-height:calc(100vh - 80px);
+  background:url("img/Resina.png") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+}
+
+.hero-container{
+  position:relative;
+  z-index:2;
+  max-width:1200px;
+  margin:auto;
+  padding:0 40px;
+
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+}
+
+.hero-left{
+  display:flex;
+  justify-content:center;
+}
+
+.hero-logo{
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:#fff;
+  padding:18px;
+  box-shadow:0 20px 50px rgba(0,0,0,.5);
+}
+
+.hero-right{
+  color:#fff;
+}
+
+.hero-right h1{
+  font-size:4rem;
+}
+
+.hero-right p{
+  font-size:1.6rem;
+  margin:15px 0 30px;
+  color:#eee;
 }
 
 /* =========================
    BOTÕES
 ========================= */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  background-color: var(--wood-main);
-  color: var(--text-invert);
-
-  padding: 14px 40px;
-  border-radius: 999px;
-
-  font-weight: bold;
-  font-size: 1rem;
-  letter-spacing: 0.3px;
-
-  border: none;
-  cursor: pointer;
-
-  transition:
-    background-color 0.3s ease,
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+.btn{
+  background:var(--wood-main);
+  color:#fff;
+  padding:14px 40px;
+  border-radius:999px;
+  font-weight:bold;
+  border:none;
+  cursor:pointer;
+  transition:.3s;
 }
 
-.btn:hover {
-  background-color: var(--wood-dark);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+.btn:hover{
+  background:var(--wood-dark);
+  transform:translateY(-2px);
 }
 
-.btn-light {
-  background-color: var(--resin-main);
+.btn-light{
+  background:var(--resin-main);
 }
 
-.btn-light:hover {
-  background-color: var(--resin-dark);
+.btn-light:hover{
+  background:var(--resin-dark);
 }
 
 /* =========================
    SEÇÕES
 ========================= */
-.section {
-  padding: 100px 0;
+.section{
+  padding:100px 0;
 }
 
-.bg-light {
-  background: var(--bg-light);
+.bg-light{
+  background:var(--bg-light);
 }
 
-h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: var(--wood-main);
+h2{
+  text-align:center;
+  margin-bottom:30px;
+  color:var(--wood-main);
 }
 
-.section p {
-  max-width: 750px;
-  margin: 0 auto 20px;
-  text-align: center;
-  color: var(--text-light);
+.section p{
+  max-width:750px;
+  margin:0 auto 20px;
+  text-align:center;
+  color:var(--text-light);
 }
 
 /* =========================
    CARDS
 ========================= */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+  margin-top:40px;
 }
 
-.card {
-  background: var(--bg-light);
-  padding: 40px 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+.card{
+  background:#fff;
+  padding:40px 30px;
+  border-radius:20px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
 
-.card h3 {
-  margin-bottom: 15px;
-  color: var(--wood-main);
+/* =========================
+   PRODUTOS
+========================= */
+.products-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:35px;
+  margin-top:40px;
+}
+
+.product-card{
+  text-align:center;
+  transition:.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 20px 45px rgba(0,0,0,.15);
+}
+
+.product-image{
+  height:220px;
+  object-fit:cover;
+  border-radius:18px;
+  margin-bottom:20px;
 }
 
 /* =========================
    CTA
 ========================= */
-.cta {
-  background: linear-gradient(
-    135deg,
-    var(--wood-main),
-    var(--wood-dark)
-  );
-  color: var(--text-invert);
-  text-align: center;
-  padding: 90px 20px;
+.cta{
+  background:linear-gradient(135deg,var(--wood-main),var(--wood-dark));
+  color:#fff;
+  text-align:center;
+  padding:90px 20px;
 }
 
-.cta p {
-  margin-bottom: 30px;
-  color: #f0f0f0;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
 .cta h2{
-    color: var(--bg-light);
+  color:#fff;
 }
 
-/* =========================
-   CONTATO
-========================= */
-.contact-buttons {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
+.cta-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
 /* =========================
    FOOTER
 ========================= */
-.footer {
-  background: var(--bg-dark);
-  color: var(--text-invert);
-  text-align: center;
-  padding: 25px;
-  font-size: 0.9rem;
+.footer{
+  background:var(--bg-dark);
+  color:#fff;
+  text-align:center;
+  padding:25px;
+  font-size:.9rem;
 }
 
 /* =========================
-   RESPONSIVO
+   RESPONSIVO + MENU MOBILE
 ========================= */
-@media (max-width: 900px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 30px;
+@media(max-width:900px){
+
+  .hero-container{
+    grid-template-columns:1fr;
+    text-align:center;
+    gap:30px;
   }
 
-  .hero-logo {
-    width: 180px;
-    height: 180px;
+  .hero-logo{
+    width:180px;
+    height:180px;
   }
 
-  .hero-right h1 {
-    font-size: 2.6rem;
+  .hero-right h1{
+    font-size:2.6rem;
   }
 
-  .hero-right p {
-    font-size: 1.3rem;
+  /* MENU */
+  .menu-mobile{
+    display:flex;
   }
 
-  .nav {
-    display: none;
+  .nav{
+    position:fixed;
+    top:80px;
+    right:20px;
+    background:#fff;
+    box-shadow:0 20px 45px rgba(0,0,0,.2);
+    border-radius:18px;
+    padding:20px;
+
+    flex-direction:column;
+    gap:15px;
+
+    opacity:0;
+    pointer-events:none;
+    transform:translateY(-10px);
+    transition:.3s;
+  }
+
+  .nav.open{
+    opacity:1;
+    pointer-events:auto;
+    transform:translateY(0);
+  }
+
+  .products-grid{
+    grid-template-columns:1fr;
   }
 }
-/* =========================
-   PRODUTOS – GRID
-========================= */
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 35px;
-  margin-top: 40px;
-}
 
-/* Card de produto */
-.product-card {
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
-}
-
-/* Imagem do produto */
-.product-image {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 18px;
-  margin-bottom: 20px;
-}
-
-/* Título */
-.product-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: var(--wood-main);
-}
-
-/* Texto */
-.product-card p {
-  font-size: 0.95rem;
-  color: var(--text-light);
-  margin-bottom: 20px;
-}
-/* PRODUTO DETALHE */
-.produto-detalhe{
-  display: flex;
-  justify-content: center;
-}
-
-.produto-box{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  max-width: 900px;
-  align-items: center;
-}
-
-.produto-img{
-  width: 100%;
-  border-radius: 16px;
-}
-
-.produto-info h1{
-  margin-bottom: 15px;
-}
-
-.produto-preco{
-  font-weight: bold;
-  margin: 15px 0;
-}
-
-.nav{
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-/* empurra o WhatsApp para o canto direito */
-.whatsapp-icon{
-  margin-left: auto;
-  width: 42px;
-  height: 42px;
-  background-color: #25D366;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.whatsapp-icon:hover{
-  background-color: #1ebe5d;
-  transform: scale(1.1);
-}
-/* Ícone do carrinho */
-.cart-icon{
-  margin-left: auto; /* joga para o canto direito */
-  width: 42px;
-  height: 42px;
-  background-color: #2f6f6b; /* verde RustiCerrado */
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 18px;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
-
-.cart-icon:hover{
-  background-color: #245854;
-  transform: scale(1.1);
-}
-/* =========================
-   ANIMAÇÕES GERAIS
-========================= */
-
-/* estado inicial */
 .animate{
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease;
 }
 
-/* quando aparece */
 .animate.show{
   opacity: 1;
   transform: translateY(0);
 }
-
-/* variações */
-.fade-left{
-  transform: translateX(-40px);
-}
-
-.fade-right{
-  transform: translateX(40px);
-}
-
-.fade-left.show,
-.fade-right.show{
-  transform: translateX(0);
-}
-
-/* zoom suave */
-.zoom{
-  transform: scale(0.95);
-}
-
-.zoom.show{
-  transform: scale(1);
-}
-
-
-
 
