@@ -322,12 +322,31 @@ h2{
   color:#fff;
 }
 
-.cta-buttons{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
+/* BOTÕES DA VITRINE */
+.cta-buttons,
+.contact-buttons{
+  display: flex;
+  gap: 20px;              /* <<< espaço entre botões */
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;        /* quebra linha no celular */
 }
+
+/* No celular: mais espaço ainda */
+@media (max-width: 600px){
+  .cta-buttons,
+  .contact-buttons{
+    gap: 16px;
+  }
+
+  .cta-buttons a,
+  .contact-buttons a{
+    width: 100%;
+    max-width: 280px;     /* botões mais elegantes */
+    text-align: center;
+  }
+}
+
 
 /* =========================
    FOOTER
@@ -404,4 +423,5 @@ h2{
   opacity: 1;
   transform: translateY(0);
 }
+
 
