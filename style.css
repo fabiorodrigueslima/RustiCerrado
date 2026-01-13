@@ -334,13 +334,13 @@ h2{
 
 /* No celular: mais espaço ainda */
 @media (max-width: 600px){
-  .cta-buttons,
-  .contact-buttons{
+  .cta-button,
+  .contact-button{
     gap: 16px;
   }
 
-  .cta-buttons a,
-  .contact-buttons a{
+  .cta-button a,
+  .contact-button a{
     width: 100%;
     max-width: 280px;     /* botões mais elegantes */
     text-align: center;
@@ -423,6 +423,7 @@ h2{
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
