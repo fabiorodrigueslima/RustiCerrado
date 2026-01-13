@@ -1,34 +1,60 @@
-// Recupera carrinho do localStorage ou cria vazio
+// =========================
+// CARRINHO GLOBAL
+// =========================
+
+// carrega carrinho do storage
 let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-// Adicionar produto ao carrinho
-function adicionarAoCarrinho(id) {
-  const produto = produtos.find(p => p.id == id);
-
-  carrinho.push(produto);
-
-  localStorage.setItem("carrinho", JSON.stringify(carrinho));
-
-  alert("Produto adicionado ao carrinho!");
+// atualiza número no header
+function atualizarContador() {
+  const contador = document.getElementById("cart-count");
+  if (contador) {
+    contador.textContent = carrinho.length;
+  }
 }
 
-// Remover produto
+// salva e atualiza contador
+function salvarCarrinho() {
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  atualizarContador();
+}
+
+// adicionar produto
+function adicionarAoCarrinho(produto) {
+  carrinho.push(produto);
+  salvarCarrinho();
+}
+
+// remover
 function removerDoCarrinho(index) {
   carrinho.splice(index, 1);
-  localStorage.setItem("carrinho", JSON.stringify(carrinho));
-  location.reload();
+  salvarCarrinho();
+  renderizarCarrinho();
 }
 
-// Finalizar pedido no WhatsApp
-function finalizarPedido() {
-  let mensagem = "Olá! Gostaria de finalizar o pedido com os seguintes produtos:%0A";
+// renderiza lista (só no carrinho.html)
+function renderizarCarrinho() {
+  const lista = document.getElementById("lista-carrinho");
+  if (!lista) return;
 
-  carrinho.forEach(item => {
-    mensagem += `- ${item.nome}%0A`;
+  lista.innerHTML = "";
+
+  if (carrinho.length === 0) {
+    lista.innerHTML = "<p>Carrinho vazio.</p>";
+    return;
+  }
+
+  carrinho.forEach((item, index) => {
+    lista.innerHTML += `
+      <div class="card product-card">
+        <h3>${item.nome}</h3>
+        <button class="btn btn-light" onclick="removerDoCarrinho(${index})">
+          Remover
+        </button>
+      </div>
+    `;
   });
-
-  window.open(
-    `https://wa.me/5561999952341?text=${mensagem}`,
-    "_blank"
-  );
 }
+
+// 🔥 ISSO FAZ APARECER O NÚMERO AO ABRIR QUALQUER PÁGINA
+document.addEventListener("DOMContentLoaded", atualizarContador);
