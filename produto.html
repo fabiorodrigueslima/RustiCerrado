@@ -10,24 +10,41 @@
 
   <link rel="stylesheet" href="style.css">
   <link rel="shortcut icon" href="img/RustiCerrado.oficial.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
   <!-- HEADER -->
-  <!-- HEADER -->
   <header class="header">
     <div class="container header-flex">
+
       <div class="logo">
         <strong>RustiCerrado</strong>
       </div>
 
-      <nav class="nav">
+      <!-- NAV -->
+      <nav class="nav" id="nav-menu">
         <a href="index.html">Início</a>
         <a href="vitrine.html">Vitrine</a>
-        <a href="loja.html" class="active">Loja</a>
-        <a href="carrinho.html" class="btn btn-light">Carrinho</a>
+        <a href="loja.html">Loja</a>
+
+        <a href="carrinho.html" class="cart-icon" aria-label="Carrinho">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+
+        <a href="https://wa.me/5561999952341" class="whatsapp-icon" target="_blank" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
       </nav>
+
+      <!-- MENU MOBILE -->
+      <button class="menu-mobile" id="menu-mobile" aria-label="Abrir menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
     </div>
   </header>
 
