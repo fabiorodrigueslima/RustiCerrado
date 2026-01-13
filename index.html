@@ -8,19 +8,15 @@
 
     <meta name="description"
         content="Peças artesanais em madeira e resina. Exclusivas, rústicas e feitas à mão, inspiradas no Cerrado.">
-    <meta name="author" content="RustiCerrado criado por Fábio Rodrigues">
-    <meta name="keywords" content="Artesanato com resina e madeira">
 
-    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/RustiCerrado.oficial.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
 <body>
 
-    <!-- HEADER / MENU -->
+    <!-- HEADER -->
     <header class="header">
         <div class="container header-flex">
 
@@ -28,49 +24,52 @@
                 <strong>RustiCerrado</strong>
             </div>
 
-            <nav class="nav">
+            <!-- NAV -->
+            <nav class="nav" id="nav-menu">
                 <a href="index.html">Início</a>
                 <a href="vitrine.html">Vitrine</a>
                 <a href="loja.html">Loja</a>
-                <a href="carrinho.html" class="xart-icon" aria-label="Carrinho"><i class="fas fa-shopping-cart"></i>
-                    Carrinho</a>
-                <a href="https://wa.me/5561999952341" class="whatsapp-icon" target="_blank" aria-label="WhatsApp"><i
-                        class="fab fa-whatsapp"></i></a>
+
+                <a href="carrinho.html" class="cart-icon" aria-label="Carrinho">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+
+                <a href="https://wa.me/5561999952341" class="whatsapp-icon" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </nav>
+
+            <!-- MENU MOBILE -->
+            <button class="menu-mobile" id="menu-mobile" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
         </div>
     </header>
 
     <!-- HERO -->
-    <!-- HERO -->
-    <section class="hero">
+    <section class="hero animate">
         <div class="hero-overlay"></div>
 
         <div class="hero-container">
-
-            <!-- LADO ESQUERDO: LOGO -->
-            <div class="hero-left">
+            <div class="hero-left animate">
                 <img src="img/RustiCerrado.oficial.png" alt="Logo RustiCerrado" class="hero-logo">
             </div>
 
-            <!-- LADO DIREITO: TEXTO -->
-            <div class="hero-right">
+            <div class="hero-right animate">
                 <h1>RustiCerrado</h1>
                 <p>Produtos artesanais com resina</p>
                 <a href="vitrine.html" class="btn">Ver produtos</a>
             </div>
-
         </div>
     </section>
-
-
-
-
 
     <!-- SOBRE -->
     <section id="sobre" class="section animate">
         <div class="container">
-            <h2 class="animate">Sobre a RustiCerrado</h2>
+            <h2>Sobre a RustiCerrado</h2>
 
             <p>
                 A <strong>RustiCerrado</strong> é um projeto artesanal que une
@@ -80,8 +79,7 @@
 
             <p>
                 Cada peça é produzida manualmente, respeitando as características
-                únicas da madeira e transformando cada criação em algo único,
-                feito sob medida para cada cliente.
+                únicas da madeira e transformando cada criação em algo único.
             </p>
         </div>
     </section>
@@ -92,17 +90,17 @@
             <h2>Nossos valores</h2>
 
             <div class="cards">
-                <div class="card">
+                <div class="card animate">
                     <h3>Artesanal</h3>
                     <p>Produção manual, cuidadosa e com atenção aos detalhes.</p>
                 </div>
 
-                <div class="card">
+                <div class="card animate">
                     <h3>Exclusividade</h3>
                     <p>Cada peça é única, respeitando a forma natural da madeira.</p>
                 </div>
 
-                <div class="card">
+                <div class="card animate">
                     <h3>Qualidade</h3>
                     <p>Uso de materiais selecionados e acabamento refinado.</p>
                 </div>
@@ -130,13 +128,12 @@
                 Fale conosco pelo WhatsApp ou Instagram e tire suas dúvidas.
             </p>
 
-            <div class="contact-buttons">
+            <div class="contact-buttons animate">
                 <a href="https://wa.me/5561999952341" target="_blank" class="btn">
                     WhatsApp
                 </a>
 
-                <a href="https://www.instagram.com/rusticerrado?igsh=MXcya25nNHRodzg5NQ==" class="btn btn-light"
-                    target="_blank">
+                <a href="https://www.instagram.com/rusticerrado" class="btn btn-light" target="_blank">
                     Instagram
                 </a>
             </div>
@@ -144,11 +141,11 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer animate">
         © 2026 RustiCerrado · Madeira & Resina Artesanal
     </footer>
-    <script src="animacoes.js"></script>
 
+    <script src="animacoes.js"></script>
 </body>
 
 </html>
