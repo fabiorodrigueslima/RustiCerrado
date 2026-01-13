@@ -19,12 +19,9 @@
   <header class="header">
     <div class="container header-flex">
 
-     <div class="logo">
-        <a href="index.html">
-            <strong>RustiCerrado</strong>
-        </a>
-                
-    </div>
+      <div class="logo">
+        <strong>RustiCerrado</strong>
+      </div>
 
       <!-- NAV -->
       <nav class="nav" id="nav-menu">
@@ -34,6 +31,7 @@
 
         <a href="carrinho.html" class="cart-icon" aria-label="Carrinho">
           <i class="fas fa-shopping-cart"></i>
+          <span id="cart-count">0</span>
         </a>
 
         <a href="https://wa.me/5561999952341" class="whatsapp-icon" target="_blank" aria-label="WhatsApp">
@@ -93,16 +91,21 @@
           <p>${produto.descricao}</p>
           <p class="produto-preco">${produto.preco}</p>
 
-          <button onclick="adicionarAoCarrinho(${produto.id})" class="btn">
+          <button class="btn" onclick="adicionarAoCarrinho({
+            id: produto.id,
+            nome: produto.nome
+            })">
             Adicionar ao carrinho
           </button>
+
         </div>
       </div>
     `;
     }
   </script>
 
+  <script src="js/carrinho.js"></script>
+
 </body>
 
 </html>
-
