@@ -16,19 +16,39 @@
 
 <body>
 
+
+
+    <!-- HEADER -->
     <!-- HEADER -->
     <header class="header">
         <div class="container header-flex">
+
             <div class="logo">
                 <strong>RustiCerrado</strong>
             </div>
 
-            <nav class="nav">
+            <!-- NAV -->
+            <nav class="nav" id="nav-menu">
                 <a href="index.html">Início</a>
                 <a href="vitrine.html">Vitrine</a>
-                <a href="loja.html" class="active">Loja</a>
-                <a href="carrinho.html" class="xart-icon" aria-label="Carrinho"><i class="fas fa-shopping-cart"></i> Carrinho</a>
+                <a href="loja.html">Loja</a>
+
+                <a href="carrinho.html" class="cart-icon" aria-label="Carrinho">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+
+                <a href="https://wa.me/5561999952341" class="whatsapp-icon" target="_blank" aria-label="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
             </nav>
+
+            <!-- MENU MOBILE -->
+            <button class="menu-mobile" id="menu-mobile" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
         </div>
     </header>
 
@@ -58,14 +78,14 @@
     </section>
 
     <!-- PRODUTOS DA LOJA -->
-    <section class="section animate">
+    <section class="section">
         <div class="container">
             <h2>Nossos Produtos</h2>
 
             <div class="products-grid">
 
                 <!-- PRODUTO 1 -->
-                <div class="card product-card zoom">
+                <div class="card product-card zoom animate">
                     <img src="img/Abridor magnetico.jpeg" alt="Abridor de garrafa magnético" class="product-image">
                     <h3>Abridor de garrafa magnético</h3>
                     <p>Abridor artesanal em madeira com ímã interno.</p>
@@ -73,7 +93,7 @@
                 </div>
 
                 <!-- PRODUTO 2 -->
-                <div class="card product-card zoom">
+                <div class="card product-card zoom animate">
                     <img src="img/Tábua de corte de peroba rosa.jpeg" alt="Tábua de corte em Peroba Rosa"
                         class="product-image">
                     <h3>Tábua de corte em Peroba Rosa</h3>
@@ -82,7 +102,7 @@
                 </div>
 
                 <!-- PRODUTO 3 -->
-                <div class="card product-card zoom">
+                <div class="card product-card zoom animate">
                     <img src="img/Tábua de Churrasco.jpeg" alt="Tábua de churrasco artesanal" class="product-image">
                     <h3>Tábua de churrasco artesanal</h3>
                     <p>Ideal para cortes e servir carnes.</p>
@@ -90,7 +110,7 @@
                 </div>
 
                 <!-- PRODUTO 4 -->
-                <div class="card product-card zoom">
+                <div class="card product-card zoom animate">
                     <img src="img/Tábua de corte machetada.jpeg" alt="Tábua de corte machetada" class="product-image">
                     <h3>Tábua de corte machetada</h3>
                     <p>Acabamento rústico e artesanal.</p>
@@ -98,7 +118,7 @@
                 </div>
 
                 <!-- PRODUTO 5 -->
-                <div class="card product-card zoom">
+                <div class="card product-card zoom animate">
                     <img src="img/Tábua de Servir.jpeg" alt="Tábua de servir artesanal" class="product-image">
                     <h3>Tábua de servir artesanal</h3>
                     <p>Ideal para petiscos e frios.</p>
@@ -106,7 +126,7 @@
                 </div>
 
                 <!-- PRODUTO 6 -->
-                <div class="card product-card zoom">
+                <div class="card product-card zoom animate">
                     <img src="img/Porta Joias.jpeg" alt="Porta-joias artesanal" class="product-image">
                     <h3>Porta-joias artesanal</h3>
                     <p>Madeira com detalhes em resina.</p>
@@ -114,7 +134,7 @@
                 </div>
 
                 <!-- PRODUTO 7 -->
-                <div class="card product-card zoom">
+                <div class="card product-card zoom animate">
                     <img src="img/Porta Faca.jpeg" alt="Porta-facas artesanal" class="product-image">
                     <h3>Porta-facas artesanal</h3>
                     <p>Madeira maciça com acabamento artesanal.</p>
@@ -122,7 +142,7 @@
                 </div>
 
                 <!-- PRODUTO 8 -->
-                <div class="card product-card zoom">
+                <div class="card product-card zoom animate">
                     <img src="img/Pestiqueira de madeira.jpeg" alt="Petisqueira artesanal" class="product-image">
                     <h3>Petisqueira artesanal</h3>
                     <p>Com divisórias para petiscos.</p>
@@ -130,7 +150,7 @@
                 </div>
 
                 <!-- PRODUTO 9 -->
-                <div class="card product-card zoom">
+                <div class="card product-card zoom animate">
                     <img src="img/Chaveiro Personalizado1.jpeg" alt="Chaveiro personalizado" class="product-image">
                     <h3>Chaveiro personalizado</h3>
                     <p>Personalização em resina, nome ou logotipo.</p>
