@@ -323,8 +323,8 @@ h2{
 }
 
 /* BOTÕES DA VITRINE */
-.cta-buttons,
-.contact-buttons{
+.cta-button,
+.contact-button{
   display: flex;
   gap: 20px;              /* <<< espaço entre botões */
   justify-content: center;
@@ -423,5 +423,6 @@ h2{
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
