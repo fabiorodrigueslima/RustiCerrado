@@ -20,7 +20,10 @@
     <div class="container header-flex">
 
       <div class="logo">
-        <strong>RustiCerrado</strong>
+        <a href="index.html">
+          <strong>RustiCerrado</strong>
+        </a>
+        
       </div>
 
       <!-- NAV -->
@@ -90,14 +93,9 @@
           <h1>${produto.nome}</h1>
           <p>${produto.descricao}</p>
           <p class="produto-preco">${produto.preco}</p>
-
-          <button class="btn" onclick="adicionarAoCarrinho({
-            id: produto.id,
-            nome: produto.nome
-            })">
+          <button clas="btn" onclick='adicionarAoCarrinho(produto)'>
             Adicionar ao carrinho
           </button>
-
         </div>
       </div>
     `;
@@ -105,6 +103,7 @@
   </script>
 
   <script src="js/carrinho.js"></script>
+  <script src="animacoes.js"></script>
 
 </body>
 
