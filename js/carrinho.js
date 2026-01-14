@@ -58,3 +58,59 @@ function renderizarCarrinho() {
 
 // 🔥 ISSO FAZ APARECER O NÚMERO AO ABRIR QUALQUER PÁGINA
 document.addEventListener("DOMContentLoaded", atualizarContador);
+
+function obterCarrinho() {
+  return JSON.parse(localStorage.getItem("carrinho")) || [];
+}
+
+function salvarCarrinho(carrinho) {
+  localStorage.setItem("carrinho", JSON.stringify(carrinho));
+  atualizarContadorCarrinho();
+}
+
+function adicionarAoCarrinho(produto) {
+  const carrinho = obterCarrinho();
+  carrinho.push(produto);
+  salvarCarrinho(carrinho);
+  alert("Produto adicionado ao carrinho!");
+}
+
+function removerDoCarrinho(index) {
+  const carrinho = obterCarrinho();
+  carrinho.splice(index, 1);
+  salvarCarrinho(carrinho);
+  renderizarCarrinho();
+}
+
+function atualizarContadorCarrinho() {
+  const contador = document.getElementById("cart-count");
+  if (contador) {
+    contador.textContent = obterCarrinho().length;
+  }
+}
+
+function renderizarCarrinho() {
+  const lista = document.getElementById("lista-carrinho");
+  const carrinho = obterCarrinho();
+
+  if (carrinho.length === 0) {
+    lista.innerHTML = "<p>Seu carrinho está vazio.</p>";
+    return;
+  }
+
+  lista.innerHTML = carrinho.map((item, index) => `
+    <div class="item-carrinho">
+      <img src="${item.imagem}" alt="${item.nome}">
+      <div class="item-info">
+        <strong>${item.nome}</strong>
+        <button onclick="removerDoCarrinho(${index})">Remover</button>
+      </div>
+    </div>
+  `).join("");
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderizarCarrinho();
+  atualizarContadorCarrinho();
+});
+
