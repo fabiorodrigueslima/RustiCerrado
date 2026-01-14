@@ -449,5 +449,110 @@ h2{
   justify-content: center;
 }
 
+/* =========================
+   PRODUTO – PÁGINA DETALHE
+========================= */
+
+.produto-detalhe {
+  display: flex;
+  justify-content: center;
+}
+
+.produto-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 900px;
+  width: 100%;
+  align-items: center;
+  background: var(--bg-light);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+}
+
+/* IMAGEM DO PRODUTO */
+.produto-img {
+  width: 100%;
+  max-width: 380px;   /* 🔥 limita o tamanho */
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+/* INFORMAÇÕES */
+.produto-info h1 {
+  color: var(--wood-main);
+  margin-bottom: 15px;
+}
+
+.produto-info p {
+  color: var(--text-light);
+  margin-bottom: 15px;
+}
+
+.produto-preco {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+/* =========================
+   RESPONSIVO – PRODUTO
+========================= */
+@media (max-width: 768px) {
+  .produto-box {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .produto-img {
+    max-width: 260px; /* 🔥 menor no celular */
+  }
+}
+
+/* =========================
+   CARRINHO
+========================= */
+
+.item-carrinho {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.item-carrinho img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.item-info {
+  flex: 1;
+}
+
+.item-info button {
+  margin-top: 10px;
+  background: #c0392b;
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.item-info button:hover {
+  background: #a93226;
+}
+
+
 
 
